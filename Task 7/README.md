@@ -1,1 +1,6 @@
 # Awesome_Robotics_Club_B-Tanisha-Rao-230278
+EXPLANATION OF PATH PLANNING
+first we create a bfs function which checks 4 parameters left,right,up,down
+then in visited we have stored the points which we have visited so that we don't repeat or again go to that point for example if we go from (1,1) int the grid to (1,3) we have 3 choices (1,2),(2,3),(1,4) if we taking the first box in grid (1,1) and increasing x and y as we go right and down.since we have come from (1,2) this point is stored inside visited. when we move forward it checks all direction parameter if the point is inside visited it doesn't move to that point.
+in queue we are putting the coordinates of the current postion and its path is pushed inside the tuple start.in queue.empty() we get current position and its path we check if this is in boderline of grid like grid.shape[0] checks if this is in x axis and grid.shape[1] checks if this is in y axis.if it is in y axis then we can only move forward and down and can't move to visited place accordingly the x and y coordinate is incremented.
+we are putting x and y coordinate of next position in grid if this is simultaneously 0 then it is obstacle it doesn't increment x and y in that direction.we are also continuosly checking if are next position is goal(5,5) or not if it is so we break out of the loop anf print the path.
